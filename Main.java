@@ -77,7 +77,7 @@ public class Main {
          f++;
       }
       System.out.println("Cleaned text: " + exm);
-      String xs = "Tomorrow we're going to Paris";
+      String xs = "Tomorrow we're going to Paris, and we're gonna go to the moon afterwards";
       String xsr = "";
       String ithLetter;
       for (int i = 0; i < xs.length(); i++) {
@@ -85,5 +85,51 @@ public class Main {
          xsr = ithLetter + xsr;
       }
       System.out.println(xs + " reversed is " + xsr);
+      for (int row = 1; row <= 3; row++) {
+         for (int col = 1; col <= 5; col++) {
+            System.out.print("*");
+         }
+         System.out.println();
+      }
+      int var1 = 3;
+      int var2 = 2;
+
+      while ((var2 != 0) && ((var1 / var2) >= 0))
+      {
+         var1 = var1 + 1;
+         var2 = var2 - 1;
+      }
+      for (int i = 3; i < 7; i++)
+      {
+         System.out.print("*");
+      }
+      System.out.println("\n\n");
+      for (int row = 0; row < 5; row++)
+      {
+         for (int col = 0; col < 10; col++)
+         {
+            System.out.print("*");
+         }
+         System.out.println();
+      }
+      System.out.println("\n\n");
+      var numRows = 4;
+      var numCols = 8;
+      for (int row = 0; row < numRows; row++) {
+         for (int col = 0; col < numCols; col++) {
+            if ((row == 1) || (row == 2)) {
+               if ((col >= 2) && (col <= 5)) {
+                  System.out.print("O");
+               }
+               else {
+                  System.out.print("|");
+               }
+            }
+            else {
+               System.out.print("|");
+            }
+         }
+         System.out.println();
+      }
    }
 }
