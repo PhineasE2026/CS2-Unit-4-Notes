@@ -1,6 +1,8 @@
+import java.util.Scanner;
 public class Main {
 
    public static void main(String []args) {
+      Scanner scan = new Scanner(System.in);
       for (int i = 0; i < 2; i++) {
          System.out.println("aeiou");
       }
@@ -113,23 +115,51 @@ public class Main {
          System.out.println();
       }
       System.out.println("\n\n");
-      var numRows = 4;
-      var numCols = 8;
+      System.out.println("Enter the number of rows");
+      int numRows = scan.nextInt();
+      System.out.println("Enter the number of columns");
+      int numCols = scan.nextInt();
+      System.out.println("\n\n");
       for (int row = 0; row < numRows; row++) {
          for (int col = 0; col < numCols; col++) {
-            if ((row == 1) || (row == 2)) {
-               if ((col >= 2) && (col <= 5)) {
-                  System.out.print("O");
+            if ((row > 0) && (row < (numRows - 1))) {
+               if ((col >= 2) && (col <= (numCols - 3))) {
+                  System.out.print("0");
                }
                else {
-                  System.out.print("|");
+                  System.out.print("1");
                }
             }
             else {
-               System.out.print("|");
+               System.out.print("1");
             }
          }
          System.out.println();
+      }
+      System.out.println("continue");
+      int move = scan.nextInt();
+      System.out.println(move + "\n\n");
+      int incRows = 2;
+      int incCols = 4;
+      for (int i = 0; i < 8; i++) {
+         for (int row = 0; row < incRows; row++) {
+            for (int col = 0; col < incCols; col++) {
+               if ((row > 0) && (row < (incRows - 1))) {
+                  if ((col >= 2) && (col <= (incCols - 3))) {
+                     System.out.print("0");
+                  }
+                  else {
+                     System.out.print("1");
+                  }
+               }
+               else {
+                  System.out.print("1");
+               }
+            }
+            System.out.println();
+         }
+         incRows++;
+         incCols = incRows*2;
       }
    }
 }
